@@ -1,0 +1,76 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon128.png",
+         "16": "icons/icon16.png",
+         "48": "icons/icon48.png"
+      },
+      "default_popup": "action/default_popup.html"
+   },
+   "background": {
+      "service_worker": "background/service_worker.js"
+   },
+   "content_scripts": [ {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-0.js" ],
+      "matches": [ "*://*.ubstv.click/*", "*://*.naruzhu.work/*", "*://*.naruzhu.am/*", "*://*.uboost.am/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-1.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.youtu.be/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-2.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.google.com/*", "*://*.youtu.be/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-3.js" ],
+      "matches": [ "*://*.youtube.com/*", "*://*.youtu.be/*", "*://*.googlevideo.com/*", "*://*.play.google.com/*", "*://*.ytimg.com/*", "*://*.witch.tv/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-4.js" ],
+      "matches": [ "*://*.storage.googleapis.com/*", "*://*.storage.yandexcloud.net/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "content_scripts/content-0.css", "content_scripts/content-1.css", "content_scripts/content-2.css" ],
+      "js": [ "content_scripts/content-5.js" ],
+      "matches": [ "*://*.youtube.com/*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Доступ к YouTube бесплатно как раньше с VPN Наружу",
+   "host_permissions": [ "https://*.youtube.com/*", "https://*.youtu.be/*", "https://*.googlevideo.com/*", "https://*.play.google.com/*", "https://*.ytimg.com/*", "https://*.witch.tv/*", "https://staticfiles.cukubst.top/*", "*://sentry-sel-4.vpnn.loan/*", "*://*.vpnn.loan/*", "*://*.yandexcloud.net/*", "https://cuknrz.top/*", "*://*.cuknrz.top/*", "*://*.nrz.homes/*" ],
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk0lbf+PHklxbOvxlPAtDT7ybBnEj+ywK4/C917FweXaqNC8ZcPBex9swyWRfQwoH8tZZPcQkBXt2ExtBpF28qsMRfUOPBYmqcC2fXwOkJeamYOCbEzqpjEGxmiODAIrlxpz486lGKQsw6ds12lqflauG8jdNdqwWIacJtQWISKNGGF50fIUhX5/JNI+jc0cNBIZaZYgphJRbdrQKVKsRcT1sCxbPB0bvxnZNB99QViS97MngdXKgXXYeq3TiH839cL+AEYf7/4DQpQKDXD/7/v+I8MD8+TX4jMgONR8RoeWWV3+2Arbha8wgxIVbhvXJSbStUQUv6yv23v49UJMxxwIDAQAB",
+   "manifest_version": 3,
+   "name": "VPN Наружу для YouTube. Обход блокировки YouTube бесплатно",
+   "permissions": [ "proxy", "storage", "webRequest", "webRequestAuthProvider", "activeTab", "tabs", "alarms", "management", "cookies" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.5.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "fonts/Press_Start_2P/*.ttf" ]
+   }, {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "fonts/CyGrotesk/*.otf" ]
+   }, {
+      "matches": [ "*://sentry-sel-4.vpnn.loan/*" ],
+      "resources": [ "*" ]
+   }, {
+      "matches": [ "*://*.ubstv.click/*", "*://*.naruzhu.work/*", "*://*.naruzhu.am/*", "*://*.uboost.am/*" ],
+      "resources": [ "assets/icon128.png", "assets/Naruzhu.png" ]
+   }, {
+      "matches": [ "*://*.youtube.com/*", "*://*.youtu.be/*" ],
+      "resources": [ "assets/icon128.png", "assets/Naruzhu.png" ]
+   }, {
+      "matches": [ "*://*.storage.googleapis.com/*", "*://*.storage.yandexcloud.net/*" ],
+      "resources": [ "assets/icon128.png", "assets/Naruzhu.png" ]
+   } ]
+}
